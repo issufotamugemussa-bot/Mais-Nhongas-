@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-mz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mais Nhongas - Compra e Venda em Moçambique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --mpesa: #af233a; --nhonga-blue: #0A2647; }
+        .bg-mpesa { background-color: var(--mpesa); }
+        .text-nhonga { color: var(--nhonga-blue); }
+        .gradient-main { background: linear-gradient(135deg, #0A2647 0%, #144272 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <nav class="gradient-main text-white p-4 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-black italic tracking-tighter">MAIS <span class="text-orange-500">NHONGAS</span></h1>
+            <button onclick="alert('Funcionalidade de login em breve!')" class="bg-orange-500 hover:bg-orange-600 px-6 py-2 rounded-full font-bold transition">
+                Vender Agora
+            </button>
+        </div>
+    </nav>
+
+    <!-- CABEÇALHO E BUSCA -->
+    <header class="gradient-main pb-16 pt-10 px-4 rounded-b-[40px] shadow-2xl">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-5xl text-white font-extrabold mb-6">A maior "nhonga" de Moçambique!</h2>
+            <div class="max-w-2xl mx-auto bg-white rounded-2xl p-2 flex shadow-xl">
+                <input type="text" placeholder="O que procuras hoje?" class="w-full px-4 py-3 outline-none text-gray-800">
+                <button class="bg-orange-500 text-white px-6 py-3 rounded-xl font-bold uppercase tracking-wider">Buscar</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CATEGORIAS -->
+    <section class="container mx-auto -mt-8 px-4">
+        <div class="grid grid-cols-3 gap-4">
+            <div class="bg-white p-4 rounded-2xl shadow-md text-center border-b-4 border-blue-600 transform hover:scale-105 transition cursor-pointer">
+                <i class="fas fa-mobile-alt text-2xl mb-2 text-blue-900"></i>
+                <p class="text-xs font-bold uppercase">Celulares</p>
+            </div>
+            <div class="bg-white p-4 rounded-2xl shadow-md text-center border-b-4 border-orange-500 transform hover:scale-105 transition cursor-pointer">
+                <i class="fas fa-tshirt text-2xl mb-2 text-orange-500"></i>
+                <p class="text-xs font-bold uppercase">Roupas</p>
+            </div>
+            <div class="bg-white p-4 rounded-2xl shadow-md text-center border-b-4 border-green-500 transform hover:scale-105 transition cursor-pointer">
+                <i class="fas fa-headphones text-2xl mb-2 text-green-500"></i>
+                <p class="text-xs font-bold uppercase">Extras</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <main class="container mx-auto py-10 px-4">
+        <div class="flex justify-between items-center mb-6">
+            <h3 class="text-xl font-black uppercase tracking-tight border-l-4 border-orange-500 pl-3">Nhongas Recentes</h3>
+            <span class="text-orange-500 font-bold text-sm cursor-pointer">Ver tudo →</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- PRODUTO 1 -->
+            <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition">
+                <div class="h-48 bg-gray-200 relative">
+                    <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400" class="w-full h-full object-cover">
+                    <div class="absolute top-3 right-3 bg-white/90 px-2 py-1 rounded-lg text-[10px] font-black uppercase text-blue-900">Verificado</div>
+                </div>
+                <div class="p-4">
+                    <h4 class="font-bold text-gray-800">iPhone 14 Pro Max</h4>
+                    <p class="text-blue-900 font-black text-xl my-1">65.000 MT</p>
+                    <p class="text-gray-400 text-xs mb-4"><i class="fas fa-map-marker-alt text-orange-500"></i> Maputo, Polana</p>
+                    <button onclick="abrirMpesa('iPhone 14', 65000)" class="w-full bg-green-500 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-green-600 transition">
+                        <i class="fab fa-whatsapp"></i> Negociar agora
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUTO 2 -->
+            <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition">
+                <div class="h-48 bg-gray-200 relative">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" class="w-full h-full object-cover">
+                    <div class="absolute top-3 left-3 bg-orange-500 text-white px-2 py-1 rounded-lg text-[10px] font-black uppercase">Promoção</div>
+                </div>
+                <div class="p-4">
+                    <h4 class="font-bold text-gray-800">Nike Air Max - Novo</h4>
+                    <p class="text-blue-900 font-black text-xl my-1">5.500 MT</p>
+                    <p class="text-gray-400 text-xs mb-4"><i class="fas fa-map-marker-alt text-orange-500"></i> Matola, T3</p>
+                    <button onclick="abrirMpesa('Nike Air', 5500)" class="w-full bg-green-500 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-green-600 transition">
+                        <i class="fab fa-whatsapp"></i> Negociar agora
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- MODAL M-PESA SIMULADO -->
+    <div id="modalMpesa" class="fixed inset-0 bg-black/80 hidden z-[100] flex items-center justify-center p-4">
+        <div class="bg-white rounded-[32px] w-full max-w-sm overflow-hidden animate-bounce-short">
+            <div class="bg-mpesa p-6 text-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/M-Pesa_Logo.png/640px-M-Pesa_Logo.png" class="h-10 mx-auto">
+            </div>
+            <div class="p-8 text-center">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Confirmar Nhonga</h3>
+                <p id="detalhePedido" class="text-gray-500 text-sm mb-6"></p>
+                <input type="number" id="phone" placeholder="84 / 85 XXXXXXX" class="w-full p-4 border-2 border-gray-100 rounded-2xl mb-4 text-center text-xl font-bold outline-none focus:border-red-500 transition">
+                <button onclick="pagar()" class="w-full bg-mpesa text-white py-4 rounded-2xl font-bold text-lg hover:opacity-90">Pagar com M-Pesa</button>
+                <button onclick="fecharModal()" class="mt-4 text-gray-400 font-bold uppercase text-xs tracking-widest">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-12 mt-10 rounded-t-[40px]">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-black italic mb-4">MAIS <span class="text-orange-500">NHONGAS</span></h2>
+            <p class="text-gray-400 text-sm mb-6">O site nº 1 para o seu "bizness" em Moçambique.</p>
+            <div class="flex justify-center gap-6 text-2xl mb-8">
+                <i class="fab fa-facebook hover:text-blue-500 cursor-pointer"></i>
+                <i class="fab fa-instagram hover:text-pink-500 cursor-pointer"></i>
+                <i class="fab fa-whatsapp hover:text-green-500 cursor-pointer"></i>
+            </div>
+            <p class="text-gray-600 text-[10px] uppercase font-bold tracking-widest">© 2024 Mais Nhongas - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        function abrirMpesa(item, preco) {
+            document.getElementById('detalhePedido').innerText = "Pagamento de " + preco + " MT para " + item;
+            document.getElementById('modalMpesa').classList.remove('hidden');
+        }
+        function fecharModal() {
+            document.getElementById('modalMpesa').classList.add('hidden');
+        }
+        function pagar() {
+            let tel = document.getElementById('phone').value;
+            if(tel.length < 9) {
+                alert("Por favor, introduza um número válido da Vodacom!");
+            } else {
+                alert("PEDIDO ENVIADO! Por favor, digite o seu PIN no celular para confirmar a compra da sua Nhonga!");
+                fecharModal();
+            }
+        }
+    </script>
+</body>
+</html>
